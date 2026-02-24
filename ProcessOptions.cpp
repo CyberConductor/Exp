@@ -1,7 +1,6 @@
 #include <windows.h>
 #include "ProcessOptions.h"
-#include <TlHelp32.h>
-#include <Psapi.h>
+
 
 std::vector<ProcessInfo> getProcessList()
 {

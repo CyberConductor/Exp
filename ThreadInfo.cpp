@@ -1,7 +1,5 @@
 #include "ThreadInfo.h"
-#include <vector>
-#include <TlHelp32.h>
-#include <Psapi.h>
+
 std::vector <ThreadInfo> getThreadsProcesses(DWORD pid)
 {
 	std::vector<ThreadInfo> threads;
@@ -14,7 +12,7 @@ std::vector <ThreadInfo> getThreadsProcesses(DWORD pid)
 	{
 		do
 		{
-			if (entry.th32OwnerProcessID = pid)
+			if (entry.th32OwnerProcessID == pid)
 			{
 				ThreadInfo info;
 				info.threadID = entry.th32ThreadID;
