@@ -27,17 +27,12 @@ Built entirely on core WinAPI:
 
 ### Build
 
-```bash
-# With MSVC
-cl /EHsc main.cpp /link psapi.lib
-
-# Or open the project in Visual Studio and build normally
-```
+Open the project in Visual Studio and build normally.
 
 ### Run
 
 ```bash
-ProcessEnumerator.exe
+Exp.exe
 ```
 
 ## Roadmap
