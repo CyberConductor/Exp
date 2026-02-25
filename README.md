@@ -1,86 +1,68 @@
-🖥 Process & Thread Enumerator (Windows, C++ / WinAPI)
-📌 Overview
+# Process & Thread Enumerator
 
-This project is a Windows console application written in modern C++ using the native Windows API.
+A Windows console application written in modern C++ that enumerates all running processes and their threads using the native Windows API.
 
-It enumerates all running processes on the system and displays:
+## Features
 
-Process ID (PID)
+- Lists all running processes with PID, parent PID (PPID), and executable name
+- Displays memory usage (Working Set) per process
+- Enumerates all threads belonging to each process
 
-Parent Process ID (PPID)
+## Tech Stack
 
-Executable name
+Built entirely on core WinAPI:
 
-Memory usage (Working Set)
+- `CreateToolhelp32Snapshot`
+- `Process32First` / `Process32Next`
+- `Thread32First` / `Thread32Next`
+- `OpenProcess`
+- `GetProcessMemoryInfo`
 
-All threads belonging to each process
+## Getting Started
 
-The implementation relies on core WinAPI functions, including:
+### Prerequisites
 
-CreateToolhelp32Snapshot
+- Windows OS
+- Visual Studio or any C++ compiler with WinAPI support (e.g. MinGW)
 
-Process32First / Process32Next
+### Build
 
-Thread32First / Thread32Next
+```bash
+# With MSVC
+cl /EHsc main.cpp /link psapi.lib
 
-OpenProcess
+# Or open the project in Visual Studio and build normally
+```
 
-GetProcessMemoryInfo
+### Run
 
-This project is designed primarily for learning and experimentation in the areas of:
+```bash
+ProcessEnumerator.exe
+```
 
-Windows Internals fundamentals
+## Roadmap
 
-Process and thread enumeration
+This project is designed to grow into a lightweight EDR-style process monitoring framework. Planned features include:
 
-Low-level system programming with WinAPI
+- Real-time monitoring with periodic refresh and delta detection (new/terminated processes)
+- CPU usage calculation per process
+- Extended memory analysis
+- Thread state and priority inspection
+- Module and DLL enumeration per process
+- Handle enumeration
+- Privilege and integrity level inspection
+- Structured logging with JSON/CSV export
+- Integration of low-level NT API calls
+- Basic behavioral monitoring heuristics
 
-Multi-file C++ project architecture
+## Goals
 
-🚀 Future Development
+This project is primarily a learning exercise in:
 
-The current version provides foundational process and thread enumeration functionality.
+- Windows Internals fundamentals
+- Process and thread lifecycle management
+- System-level programming with WinAPI and NT APIs
+- Defensive security tooling design
+- Multi-file C++ project architecture
 
-The project is intended to evolve into a more advanced Windows process inspection and monitoring tool.
-
-Planned Enhancements
-
-Real-time monitoring with periodic refresh
-
-Detection of newly created and terminated processes
-
-CPU usage calculation per process
-
-Extended memory analysis
-
-Thread state and priority inspection
-
-Module enumeration, DLL listing per process
-
-Handle enumeration
-
-Basic behavioral monitoring logic
-
-Structured logging system
-
-Export functionality, JSON or CSV
-
-Privilege and integrity level inspection
-
-Integration of low-level NT API calls
-
-Gradual transition toward a lightweight EDR-style monitoring prototype
-
-🎯 Long-Term Goal
-
-The long-term objective of this project is to build a strong understanding of:
-
-Windows Internals
-
-Process and thread management
-
-System-level monitoring techniques
-
-Defensive security tooling design
-
-The tool will progressively evolve from a basic enumerator into a more advanced process inspection and behavioral monitoring framework.
+The long-term objective is to evolve this tool into a solid foundation for understanding how EDR and process monitoring tools work at a low level.
