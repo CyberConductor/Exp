@@ -16,6 +16,7 @@ Refresh every few seconds and detect new processes
 #include "ProcessOptions.h"
 #include "ProcessInfo.h"
 #include "ThreadInfo.h"
+#include "RegDetect.h"
 
 int main()
 {
@@ -31,6 +32,9 @@ int main()
         {
             std::wcout << L"    Thread ID: " << t.threadID << std::endl;
         }
+
+        std::wcout << L"StartUp Registry Programs:" << std::endl;
+        ScanStartupKeys();
             
     }
 

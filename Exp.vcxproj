@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="Exp.cpp" />
     <ClCompile Include="ProcessOptions.cpp" />
+    <ClCompile Include="RegDetect.cpp" />
     <ClCompile Include="ThreadInfo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProcessInfo.h" />
     <ClInclude Include="ProcessOptions.h" />
+    <ClInclude Include="RegDetect.h" />
     <ClInclude Include="ThreadInfo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

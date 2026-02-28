@@ -21,12 +21,24 @@
     <ClCompile Include="ProcessOptions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ThreadInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RegDetect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProcessInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProcessOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RegDetect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
