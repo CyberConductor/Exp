@@ -29,7 +29,7 @@ void CheckStartupRegistry(HKEY rootKey, const std::wstring& subKey)
 			std::wcout << L"Startup value: " << valueName << L"->" << programPath << std::endl;
 			if (programPath.find(L"AppData") != std::wstring::npos || programPath.find(L"Temp") != std::wstring::npos)
 			{
-				std::wcout << L" -> suspicouts!" << std::endl;
+				std::wcout << programPath << " is suspicous!" << std::endl;
 			}
 		}
 
