@@ -20,7 +20,7 @@ int main()
         }
 
         std::wcout << L"StartUp Registry Programs:" << std::endl;
-        ScanStartupKeys();
+        ScanStartupKeys(0);
             
     }
 

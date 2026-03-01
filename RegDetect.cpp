@@ -40,9 +40,16 @@ void CheckStartupRegistry(HKEY rootKey, const std::wstring& subKey)
 
 }
 
-void ScanStartupKeys()
+void ScanStartupKeys(int option)
 {
-	CheckStartupRegistry(HKEY_CURRENT_USER, L"Software\\Microsoft\\Windows\\CurrentVersion\\Run");
+	std::cout << "Regular User Programs:" << std::endl;
+	if (option == 0)
+		CheckStartupRegistry(HKEY_CURRENT_USER, L"Software\\Microsoft\\Windows\\CurrentVersion\\Run");
+	else if (option == 1)
+		CheckStartupRegistry(HKEY_LOCAL_MACHINE, L"Software\\Microsoft\\Windows\\CurrentVersion\\Run");
+
+	else
+		exit(0);
 }
 
 
